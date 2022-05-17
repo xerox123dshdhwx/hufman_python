@@ -1,5 +1,3 @@
-
-
 def q1():
     def read_file(file):
         dict = {}
@@ -16,15 +14,18 @@ def q1():
     dictList = read_file("textesimple.txt")
 
     var = {k: v for k, v in sorted(dictList.items(), key=lambda item: item[1])}
+
     my_list = list(var.items())
+
     for mx in range(len(my_list)-1, -1, -1):
         for i in range(mx):
             if my_list[i][1] == my_list[i+1][1]:
                 if my_list[i][0] >my_list[i+1][0]:
                     my_list[i], my_list[i + 1] = my_list[i + 1], my_list[i]
-
-
     return  my_list
+
+def q2():
+    pass
 
 if __name__ == '__main__':
         print(q1())
