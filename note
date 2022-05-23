@@ -1,0 +1,5 @@
+    for mx in range(len(nodeList) - 1, -1, -1):
+        for i in range(len(nodeList)-1):
+            if nodeList[i].valeur[1] ==  nodeList[i + 1].valeur[1]:
+                if  nodeList[i].valeur[0] >  nodeList[i].valeur[0]:
+                    nodeList[i], nodeList[i + 1] = nodeList[i + 1], nodeList[i]
