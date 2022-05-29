@@ -3,3 +3,20 @@
             if nodeList[i].valeur[1] ==  nodeList[i + 1].valeur[1]:
                 if  nodeList[i].valeur[0] >  nodeList[i].valeur[0]:
                     nodeList[i], nodeList[i + 1] = nodeList[i + 1], nodeList[i]
+        def remplissage(T:ArbreBinaire):
+        if(T!=None):
+
+            if(T.get_gauche() != None):
+                T.get_gauche().bit = 0
+                remplissage(T.get_gauche())
+            if(T.get_droit() != None):
+                T.get_droit().bit = 1
+                remplissage(T.get_droit())
+j = []
+    for k in range(len(list)):
+        j+=list[k]
+    #print(j)
+    b = ""
+    for i in range(len(j)):
+        b+=j[i]
+    print(b)
