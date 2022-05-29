@@ -27,12 +27,17 @@ def createTree(my_list):
         nodeList.remove(node2)
     return nodeList
 
-def affichageMaisonMaison(T: abr.ArbreBinaire):
+def affichageJson(T: abr.ArbreBinaire):
+    """
+    Permet l'affichage d'un arbre binaire sous format JSON
+    :param T:
+    :return: void
+    """
     if (T != None):
         print("{\"label\" : \"" + T.get_valeur()[0] + "\", \"frequence\" : " + str(T.get_valeur()[1]) + ", \"left\":")
-        affichageMaisonMaison(T.get_gauche())
+        affichageJson(T.get_gauche())
         print(", \"right\":");
-        affichageMaisonMaison(T.get_droit())
+        affichageJson(T.get_droit())
         print("}")
     else:
         print("null")
@@ -42,6 +47,13 @@ global_list = []
 dict = {}
 
 def get_codage(T: abr.ArbreBinaire, constructor=""):
+    """
+    Fonction qui parcours l'arbre binaire et cree une chaine de caractére de bit pour chaque feuille atteint aisin que sont caractére associer la feuille
+    et renvoie un dictionnaire d'association caractére -> chaine binaire ainsi qu'une liste de tout les codage binaire
+    :param T:
+    :param constructor:
+    :return: global_list dict
+    """
     if T.get_droit() == None and T.get_gauche() == None:
         print(T.get_valeur()[0], " : ", constructor)
         l = []
