@@ -17,8 +17,8 @@ def q2(my_list):
     text_to_bin = fileManager.getTextToBin(filePath, dict)
     fileManager.writteFileBin(text_to_bin)
     fileManager.tauxCompression(filePath)
-    fileManager.moyenneBit(my_list,list)
+    fileManager.moyenneBit(my_list, list)
 
 if __name__ == '__main__':
-    filePath = "FileToCompress/textesimple.txt"
+    filePath = "../FileToCompress/textesimple.txt"
     print(q1(filePath))
