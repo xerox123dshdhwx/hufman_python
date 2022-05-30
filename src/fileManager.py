@@ -26,7 +26,7 @@ def tauxCompression(fileName):
     :return:
     """
     init = os.path.getsize(fileName)
-    final = os.path.getsize("res.bin")
+    final = os.path.getsize("../res.bin")
     print((1 - int(final) / init) * 100, "%")
 
 
@@ -51,7 +51,7 @@ def writteFileBin(text_to_bin):
     :param text_to_bin:
     :return:
     """
-    with open("res.bin", "wb") as f_bin:
+    with open("../res.bin", "wb") as f_bin:
         f_bin.write(int(text_to_bin, base=2).to_bytes((len(text_to_bin) + 7) // 8, byteorder='big'))
 
 def moyenneBit(my_list,list):
