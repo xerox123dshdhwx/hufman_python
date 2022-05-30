@@ -1,5 +1,9 @@
 class ArbreBinaire:
     def __init__(self, valeur):
+        """
+        Constructeur
+        :param valeur:
+        """
         self.valeur = valeur
         self.bit = 0
         self.enfant_gauche = None

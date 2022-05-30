@@ -1,13 +1,6 @@
-import os.path
-from cgitb import text
-
-import ArbreBinaire as abr
 import ArbreMangement as am
 import fileManager
 import listManagement
-
-fileName = "FileToCompress/extraitalice.txt"
-
 
 def q1(fileName):
     dictList = fileManager.read_file(fileName)
@@ -17,12 +10,15 @@ def q1(fileName):
 
 def q2(my_list):
     nodeList = am.createTree(my_list)
-    dict,list = am.get_codage(nodeList[0])
-    #am.affichageJson(nodeList[0])
-    am.get_codage(nodeList[0])
-    text_to_bin = fileManager.getTextToBin(fileName,dict)
+
+    dict, list = am.get_codage(nodeList[0])
+    am.affichageJson(nodeList[0])
+    #am.get_codage(nodeList[0])
+    text_to_bin = fileManager.getTextToBin(filePath, dict)
     fileManager.writteFileBin(text_to_bin)
-    fileManager.tauxCompression(fileName)
+    fileManager.tauxCompression(filePath)
+    fileManager.moyenneBit(my_list,list)
 
 if __name__ == '__main__':
-        print(q1(fileName))
+    filePath = "FileToCompress/textesimple.txt"
+    print(q1(filePath))
